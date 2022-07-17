@@ -1,0 +1,6 @@
+C:\Users\Victo\OneDrive\Escritorio\Proyectos 2022\Sistema 4 capas\ProyectoC#\Sistema\Sistema.Entidades\bin\Debug\Sistema.Entidades.dll
+C:\Users\Victo\OneDrive\Escritorio\Proyectos 2022\Sistema 4 capas\ProyectoC#\Sistema\Sistema.Entidades\bin\Debug\Sistema.Entidades.pdb
+C:\Users\Victo\OneDrive\Escritorio\Proyectos 2022\Sistema 4 capas\ProyectoC#\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.AssemblyReference.cache
+C:\Users\Victo\OneDrive\Escritorio\Proyectos 2022\Sistema 4 capas\ProyectoC#\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Victo\OneDrive\Escritorio\Proyectos 2022\Sistema 4 capas\ProyectoC#\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.dll
+C:\Users\Victo\OneDrive\Escritorio\Proyectos 2022\Sistema 4 capas\ProyectoC#\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.pdb
