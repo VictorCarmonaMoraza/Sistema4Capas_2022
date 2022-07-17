@@ -103,5 +103,20 @@ namespace Sistema.Presentacion
                 childForm.Close();
             }
         }
+
+        /// <summary>
+        /// Cuando hacemos click en el boton de la pestaña Almacen llamada Categoria
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Instanciamos el objeto de FrmCategoria
+            FrmCategoria frm =new FrmCategoria();
+            //Le decimos que el MDI sea el formulario en el que nos encontramos
+            frm.MdiParent = this;
+            //Hacemos que el formulario se muestre
+            frm.Show();
+        }
     }
 }
