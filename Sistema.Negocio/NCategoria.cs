@@ -65,20 +65,16 @@ namespace Sistema.Negocio
         /// <param name="Nombre">Nombre nuevo del elemento a actualizar</param>
         /// <param name="Descripcion">Descripcion nueva del elemento a actualiza</param>
         /// <returns></returns>
-        public static string Actualizar(int Id, string Nombre,string Descripcion)
+        public static string Actualizar(int Id,string NombreAnt, string Nombre,string Descripcion)
         {
             //Instanciamos la capa Datos
             DCategoria Datos = new DCategoria();
-            //verificamos si la categoria existe
-            string Existe = Datos.Existe(Nombre);
-            if (Existe.Equals("1"))
+            //Creamos una instancia a la clase Categoria
+            Categoria categoria = new Categoria();
+
+            //si ambos nombres son igaules el usuario no quiere cambiar la categoria
+            if (NombreAnt.Equals(Nombre))
             {
-                return "La categoria ya existe";
-            }
-            else
-            {
-                //Creamos una instancia a la clase Categoria
-                Categoria categoria = new Categoria();
                 //Añadimos los valores de las propiedades del objeto Categoria
                 categoria.IdCategoria = Id;
                 categoria.Nombre = Nombre;
@@ -86,7 +82,24 @@ namespace Sistema.Negocio
                 //retornamos lo que nos envie el metodo Buscar de la Capa Datos
                 return Datos.Actualizar(categoria);
             }
-            
+            else
+            {
+                //verificamos si la categoria existe
+                string Existe = Datos.Existe(Nombre);
+                if (Existe.Equals("1"))
+                {
+                    return "La categoria ya existe";
+                }
+                else
+                {
+                    //Añadimos los valores de las propiedades del objeto Categoria
+                    categoria.IdCategoria = Id;
+                    categoria.Nombre = Nombre;
+                    categoria.Descripcion = Descripcion;
+                    //retornamos lo que nos envie el metodo Buscar de la Capa Datos
+                    return Datos.Actualizar(categoria);
+                }
+            }
         }
 
         /// <summary>
