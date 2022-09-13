@@ -290,7 +290,7 @@ namespace Sistema.Datos
             try
             {
                 SqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand Comando = new SqlCommand("categoria_activar", SqlCon);
+                SqlCommand Comando = new SqlCommand("categoria_desactivar", SqlCon);
                 //Le decimos que vamos a ejecutar un procedimiento almacenado
                 Comando.CommandType = CommandType.StoredProcedure;
                 //

@@ -358,5 +358,95 @@ namespace Sistema.Presentacion
                 MessageBox.Show(ex.Message+ex.StackTrace);
             }
         }
+
+        private void BtnActivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                //Mostramos un cuadro de dialogo con dos botones, uno de OK y otro de Cancel
+                Opcion = MessageBox.Show("Realmente deseas activar el/los registro(s)?", "Sistema de ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //si hemos seleccionado la opcion de OK
+                if (Opcion == DialogResult.OK)
+                {
+                    int Codigo;
+                    string Rpta = "";
+                    //Recorremos todo el listado de elementos seleccionados
+                    foreach (DataGridViewRow row in DgvListado.Rows)
+                    {
+                        //Si el elemento esta seleccionado
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            //Obtenemos el codigo que en realidad es el Id del elemento a eliminar
+                            Codigo = Convert.ToInt32(row.Cells[1].Value);
+                            //Devolvemos la respuesta de la eliminacion
+                            Rpta = NCategoria.Activar(Codigo);
+
+                            //
+                            if (Rpta.Equals("OK"))
+                            {
+                                //LLamamos al mensaje OK
+                                this.MensajeOK("Se activo el registro: " + Convert.ToString(row.Cells[2].Value));
+                            }
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+                        }
+                    }
+                    this.Listar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void BtnDesactivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                //Mostramos un cuadro de dialogo con dos botones, uno de OK y otro de Cancel
+                Opcion = MessageBox.Show("Realmente deseas desactivar el/los registro(s)?", "Sistema de ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //si hemos seleccionado la opcion de OK
+                if (Opcion == DialogResult.OK)
+                {
+                    int Codigo;
+                    string Rpta = "";
+                    //Recorremos todo el listado de elementos seleccionados
+                    foreach (DataGridViewRow row in DgvListado.Rows)
+                    {
+                        //Si el elemento esta seleccionado
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            //Obtenemos el codigo que en realidad es el Id del elemento a eliminar
+                            Codigo = Convert.ToInt32(row.Cells[1].Value);
+                            //Devolvemos la respuesta de la eliminacion
+                            Rpta = NCategoria.Desactivar(Codigo);
+
+                            //
+                            if (Rpta.Equals("OK"))
+                            {
+                                //LLamamos al mensaje OK
+                                this.MensajeOK("Se deactivo el registro: " + Convert.ToString(row.Cells[2].Value));
+                            }
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+                        }
+                    }
+                    this.Listar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }
